@@ -1,0 +1,12 @@
+{% include "attendance/header.html" %}
+{% if graph %}
+<div class="container">
+      <h1>Graph via Plot.ly</h1>
+      <br>
+
+      <br><br>
+      <iframe id="igraph" src={{graph}} width="900" height="450" seamless="seamless" scrolling="no"></iframe>
+    </div>
+
+
+{% endif %}

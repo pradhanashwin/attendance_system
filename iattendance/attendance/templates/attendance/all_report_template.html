@@ -1,0 +1,23 @@
+{% include "attendance/header.html" %}
+
+	<div class="container padding-top" style = "padding-top:20px;">
+		<div class="form-desc alert-info" style = "padding: 5px;" > 
+			* Enter the dates to find the overall report of all employees! 
+		</div>
+		<br>
+
+		<form action="{% url 'all_employee_report' %}" method="get" class = "col-md-4" enctype = "multipart/form-data" style="padding:0px"
+		> {% csrf_token %}
+		  <div class="form-group" >
+		    	<input type="text" value="" name="a_nepali_date_from" id="nepaliDate1" class="date-picker form-control" placeholder="Date (From)">
+		  </div>
+		  <div class="form-group">
+		    	<input type="text" value="" name="a_nepali_date_to" id="nepaliDate2" class="date-picker form-control" placeholder="Date (To)">
+		    
+		  </div>
+		  <div class="form-group " style = "padding:0px">
+		  	<input type="submit" value="Submit" class="btn btn-primary"/>
+		  	
+		  </div>
+		</form>
+	</div>

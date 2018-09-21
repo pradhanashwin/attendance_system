@@ -1,0 +1,47 @@
+{% include "attendance/header.html" %}
+
+	{% if messages %}
+	<ul class="messages">
+		{% for message in messages %}
+		   <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+
+<div class="container emp_report_table">
+		<div class = " col-md-12" style="padding:0px">
+
+			<table id="table_id" class="display">
+			    <thead>
+			        <tr>
+			            <th>Employee ID</th>
+			            <th>Name</th>
+			            <th>  In Time</th>
+			            <th> Out Time</th>
+			            <th> Time Spent (hrs)</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			    
+			    {% for value in table %}
+
+			    	<tr>
+				    	<td>{{value.args.emp_id_id}}</td>
+				    	<td>{{value.args.emp_id}}</td>
+				    	<td>{{value.args.in_time}}</td>
+				    	<td>{{value.args.out_time}}</td>
+				    	<td>{{value.time_spent.0}} hours {{value.time_spent.1}} minutes</td>
+			    	</tr>
+
+			    {% endfor %}
+			    
+			    </tbody>
+			</table>
+		</div>
+		
+	</div>
+
+
+</body>
+
+</html>

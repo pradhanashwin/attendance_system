@@ -1,0 +1,31 @@
+{% include "attendance/header.html" %}
+<div class="alert alert-info message-section">
+        <p>Please Upload CSV file</p>
+
+    </div>
+{% if messages %}
+		<div class="alert alert-danger message-section">
+		    {% for message in messages %}
+		    <div {% if message.tags %} class="{{ message.tags }}" data-dismiss="alert" {% endif %}>{{ message }}</div>
+		    {% endfor %}
+		</div>
+		{% endif %}
+		<div class="container padding-top uploadfile">
+
+	<!-- 	<p class="alert-warning">* Upload latest attendance excel file. 
+			<strong>Warning!! </strong>
+			 Do not upload file that is already uploaded.</p>
+		<br> -->
+		
+
+
+		<form action="{% url 'upload_csv' %}" method="post" enctype = "multipart/form-data">
+			{% csrf_token %}
+				<input type="file" name="file" value="Upload"/><br/>
+				<input type="submit" value="Upload File" class="btn btn-primary"/>
+		</form>
+</div>
+	
+
+</body>
+</html>
