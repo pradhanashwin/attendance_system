@@ -48,7 +48,7 @@ prompt-toolkit==1.0.15
 pyexcel==0.5.9.1
 pyexcel-io==0.5.9.1
 pyexcel-webio==0.1.4
-Pygments==2.2.0
+Pygments==2.7.4
 python-dateutil==2.7.3
 pytz==2018.5
 pywinpty==0.5.4
